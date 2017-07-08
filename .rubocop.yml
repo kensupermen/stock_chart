@@ -3,12 +3,13 @@ inherit_from: ./.rubocop_todo.yml
 AllCops:
   Exclude:
     - db/**/**
+    - .rubocop.yml
 
 Style/Documentation:
   Enabled: false
 
 Style/TrailingWhitespace:
-  Enabled: true
+  Enabled: false
 
 Style/MultilineBlockChain:
   Enabled: false
