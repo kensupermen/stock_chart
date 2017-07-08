@@ -6,7 +6,7 @@ module V1
       include Roar::JSON
       include Grape::Roar::Representer
 
-      collection :entries, extend: TransactionRepresenter, as: :transactions, embedded: true
+      collection :entries, extend: TransactionRepresenter, as: :companies, embedded: true
     end
   end
 end
