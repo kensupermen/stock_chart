@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170706143402) do
 
   create_table "transactions", force: :cascade do |t|
     t.integer "company_id"
-    t.datetime "transaction_date"
+    t.date "transaction_date"
     t.string "open_price"
     t.integer "high_price"
     t.integer "low_price"
