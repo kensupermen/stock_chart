@@ -4,7 +4,7 @@ module V1
 
     def self.import
       CSV.foreach('data_hcm.csv', headers: true) do |row|
-        company = Company.find_or_create_by(code: row[0])
+        company = Ticker.find_or_create_by(code: row[0])
         Transaction.find_or_create_by(company_id: company.id,
                                       transaction_date: Date.parse(row[1]),
                                       open_price: row[2],
@@ -15,11 +15,11 @@ module V1
       end
     end
 
-    resource :transaction do
+    resources :transactions do
       desc 'List company'
 
-      get 'import_data' do 
-        TransactionApi.import
+      get 'import_data' do
+        TransactionsApi.import
       end
 
       get '/' do
