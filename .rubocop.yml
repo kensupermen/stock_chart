@@ -9,7 +9,7 @@ Style/Documentation:
   Enabled: false
 
 Style/TrailingWhitespace:
-  Enabled: false
+  Enabled: true
 
 Style/MultilineBlockChain:
   Enabled: false
