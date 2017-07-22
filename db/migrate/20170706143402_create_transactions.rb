@@ -1,7 +1,7 @@
 class CreateTransactions < ActiveRecord::Migration[5.1]
   def change
     create_table :transactions do |t|
-      t.integer :company_id
+      t.integer :ticker_id
       t.date :transaction_date
       t.decimal :open_price
       t.decimal :high_price

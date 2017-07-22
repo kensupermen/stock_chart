@@ -4,8 +4,8 @@ module V1
 
     def self.import
       CSV.foreach('data_hcm.csv', headers: true) do |row|
-        company = Ticker.find_or_create_by(code: row[0])
-        Transaction.find_or_create_by(company_id: company.id,
+        ticker = Ticker.find_or_create_by(code: row[0])
+        Transaction.find_or_create_by(ticker_id: ticker.id,
                                       transaction_date: Date.parse(row[1]),
                                       open_price: row[2],
                                       high_price: row[3],
