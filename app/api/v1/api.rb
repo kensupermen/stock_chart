@@ -4,6 +4,7 @@ module V1
     version 'v1', using: :path
     format :json
 
-    mount TransactionApi
+    mount TransactionsApi
+    mount CompaniesApi
   end
 end

@@ -11,7 +11,6 @@ class Transaction < ApplicationRecord
   scope :find_by_ticker, ->(ticker_code) { where(company_id: list_ticker[ticker_code]) }
   
   private 
-  
   def self.get_transaction_by_transaction_date(from_date, to_date)
     where('transaction_date BETWEEN ? AND ?', from_date, to_date)
   end

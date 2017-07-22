@@ -1,5 +1,3 @@
-require 'roar/json/hal'
-
 module V1
   module Representers
     module TransactionsRepresenter

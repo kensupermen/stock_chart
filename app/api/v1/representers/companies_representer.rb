@@ -1,12 +1,10 @@
-require 'roar/json/hal'
-
 module V1
   module Representers
-    module TransactionsRepresenter
+    module CompaniesRepresenter
       include Roar::JSON
       include Grape::Roar::Representer
 
-      collection :entries, extend: TransactionRepresenter, as: :transactions, embedded: true
+      collection :entries, extend: CompanyRepresenter, as: :transactions, embedded: true
     end
   end
 end
