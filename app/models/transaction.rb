@@ -22,6 +22,7 @@ class Transaction < ApplicationRecord
   private
 
   def get_percent(price_from, price_to)
+    return 0 if price_from.zero? || price_to.zero?
     (price_to * 100) / price_from
   end
 
