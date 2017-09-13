@@ -2,10 +2,10 @@ module V1
   class TransactionsApi < BaseApi
     require 'csv'
 
-    def self.import
-      CSV.foreach('data_hcm.csv', headers: true) do |row|
-        company = Company.find_or_create_by(code: row[0])
-        Transaction.find_or_create_by(company_id: company.id,
+    def self.import(file_name)
+      CSV.parse(file_name, headers: true) do |row|
+        ticker = Ticker.find_or_create_by(code: row[0])
+        Transaction.find_or_create_by(ticker_id: ticker.id,
                                       transaction_date: Date.parse(row[1]),
                                       open_price: row[2],
                                       high_price: row[3],
@@ -15,11 +15,11 @@ module V1
       end
     end
 
-    resource :transaction do
+    resources :transactions do
       desc 'List company'
 
-      get 'import_data' do 
-        TransactionApi.import
+      post 'import' do
+        TransactionsApi.import params[:file_name]
       end
 
       get '/' do

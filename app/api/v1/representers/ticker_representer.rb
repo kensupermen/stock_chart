@@ -1,6 +1,6 @@
 module V1
   module Representers
-    module CompanyRepresenter
+    module TickerRepresenter
       include Roar::JSON
       include Grape::Roar::Representer
 

@@ -5,6 +5,6 @@ module V1
     format :json
 
     mount TransactionsApi
-    mount CompaniesApi
+    mount TickersApi
   end
 end
