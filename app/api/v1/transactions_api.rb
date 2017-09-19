@@ -2,8 +2,9 @@ module V1
   class TransactionsApi < BaseApi
     require 'csv'
 
-    def self.import(file_name)
-      CSV.parse(file_name, headers: true) do |row|
+    def self.import
+      # CSV.parse(file_name, headers: true) do |row|
+      CSV.foreach('data_15092017.csv', headers: true) do |row|
         ticker = Ticker.find_or_create_by(code: row[0])
         Transaction.find_or_create_by(ticker_id: ticker.id,
                                       transaction_date: Date.parse(row[1]),
@@ -18,8 +19,9 @@ module V1
     resources :transactions do
       desc 'List company'
 
-      post 'import' do
-        TransactionsApi.import params[:file_name]
+      get 'import' do
+        #TransactionsApi.import params[:file_name]
+        TransactionsApi.import
       end
 
       get '/' do
