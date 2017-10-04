@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+**Stock Chart** is an app that suggests trades when and which stocks to **buy** or **sell**.
+Currently it is functional **only** through Vietnam!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The stocks data are updated every day from [cafef.vn](http://cafef.vn) and the suggestions are made based on greatest percentage changes! 
