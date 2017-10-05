@@ -21,12 +21,12 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: postgres
-  username: postgres
-  password:
-  host: db
 
 development:
   <<: *default
+  host: db
+  username: postgres
+  password:
   database: stock_chart_development
 
   # The specified database role being used to connect to postgres.
@@ -85,5 +85,6 @@ test:
 production:
   <<: *default
   database: stock_chart_production
+  host: db
   username: stock_chart
   password: <%= ENV['STOCK_CHART_DATABASE_PASSWORD'] %>
